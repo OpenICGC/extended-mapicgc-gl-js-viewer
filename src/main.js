@@ -29,7 +29,7 @@ async function initMap() {
         },
         "bottom-right"
       );
-      map.addExportControl({}, "top-right");
+      map.addExportControl();
       map.addFullscreenControl({}, "top-right");
       map.addTerrainICGC(data.Terrains.ICGC5M, "bottom-right");
       map.addMouseCoordControl(["bottom-right"]);
@@ -66,12 +66,22 @@ async function initMap() {
       const menuItems = data.Layers.Orto;
 
       const menuSelect = document.getElementById("menuSelect");
+      function getLabel(string) {
+        // Use a regular expression to find the points where to split
+        let words = string.match(/[A-Z]?[a-z]+|[A-Z]+(?=[A-Z]|$)|\d+/g);
+        // Join the found words with spaces
+        let label = words.join(' ');
+        return label;
+    }
 
       for (const key in menuItems) {
         if (menuItems.hasOwnProperty(key)) {
           const option = document.createElement("option");
           option.value = key;
-          option.textContent = key;
+
+
+          let labelKey = getLabel(key)
+          option.textContent = labelKey;
           menuSelect.appendChild(option);
         }
       }
