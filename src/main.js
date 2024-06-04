@@ -1,31 +1,3 @@
-## basic mapicgc-gl-js viewer
-
-  * Basic mapicgc-gl-js viewer
-  * Vanilla JS + Vite
-
-### Mapicgc-gl-js documentation
-
-  * https://openicgc.github.io/mapicgc-doc/
-
-### To install
-
-```bash
-git clone https://github.com/OpenICGC/basic-mapicgc-gl-js-viewer-js.git
-
-cd /basic-mapicgc-gl-js-viewer-js
-
-npm install
-npm run build
-npm run serve
-
-```
-
-
-
-### Javascript
-
-```javascript
-
 import { Map, Config } from "mapicgc-gl-js";
 //import * as mapicgcgl from  "mapicgc-gl-js";
 
@@ -64,5 +36,3 @@ async function initMap() {
 }
 
 initMap();
-
-```
