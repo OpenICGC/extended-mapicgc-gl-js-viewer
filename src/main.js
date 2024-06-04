@@ -32,11 +32,12 @@ async function initMap() {
       map.addExportControl({}, "top-right");
       map.addFullscreenControl({}, "top-right");
       map.addTerrainICGC(data.Terrains.ICGC5M, "bottom-right");
-      map.addMouseCoordControl(["bottom-left"]);
+      map.addMouseCoordControl(["bottom-right"]);
 
       let basemapsicgc = [
         data.Styles.ORTO,
         data.Styles.TOPO,
+        data.Styles.DARK,
         data.Styles.GEOLOGY,
       ];
       map.addBasemapsICGC(basemapsicgc);
